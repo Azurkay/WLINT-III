@@ -15,31 +15,26 @@ public class CamaroDrive : MonoBehaviour
     [SerializeField] private Transform _RLTransform;
     [SerializeField] private Transform _RRTransform;
 
-    [SerializeField] private float _motorForce = 100f;
-    [SerializeField] private float _steeringForce = 30f;
-    [SerializeField] private Rigidbody _rb;
-    [SerializeField] private Transform _camaroCentreOfMass;
-
-
     #endregion
 
     #region Attributes
-
-    private float verticalInput;
-    private float horizontalInput;
-
+        
     #endregion
 
-    private void MotorForce()
+    private void MoveForward()
     {
-        _RL.motorTorque = _motorForce * verticalInput;
-        _RR.motorTorque = _motorForce * verticalInput;
-    }
-
-    private void SteeringWheels()
-    {
-        _FR.steerAngle = _steeringForce * horizontalInput;
-        _FL.steerAngle = _steeringForce * horizontalInput;
+        if (Input.GetKey(KeyCode.Z))
+        {
+            _FL.motorTorque = 100f;
+            RotateWheel(_FL, _FLTransform);
+            _FR.motorTorque = 100f;
+            RotateWheel(_FR, _FRTransform);
+        }
+        else if (Input.GetKeyUp(KeyCode.Z))
+        {
+            _FL.motorTorque = 0;
+            _FR.motorTorque = 0;
+        }
     }
 
     private void RotateWheel(WheelCollider wheelCollider, Transform transform)
@@ -51,36 +46,15 @@ public class CamaroDrive : MonoBehaviour
         transform.rotation = rot;
     }
 
-    private void UpdateWheel()
-    {
-        RotateWheel(_FL, _FLTransform);
-        RotateWheel(_FR, _FRTransform);
-        RotateWheel(_RL, _RLTransform);
-        RotateWheel(_RR, _RRTransform);
-    }
-
-    private void GetInput()
-    {
-        verticalInput = Input.GetAxis("Vertical");
-        horizontalInput = Input.GetAxis("Horizontal");
-    }
 
 
 
 
     #region Mono
 
-    private void Start()
-    {
-        _rb.centerOfMass = _camaroCentreOfMass.localPosition;
-    }
-
     private void Update()
     {
-        MotorForce();
-        SteeringWheels();
-        UpdateWheel();
-        GetInput();
+        MoveForward();
     }
 
     #endregion
