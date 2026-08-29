@@ -32,8 +32,8 @@ public class CamaroDrive : MonoBehaviour
 
     private void MotorForce()
     {
-        _RL.motorTorque = _motorForce * verticalInput;
-        _RR.motorTorque = _motorForce * verticalInput;
+        _RL.motorTorque = _motorForce * verticalInput * -1;
+        _RR.motorTorque = _motorForce * verticalInput * -1;
     }
 
     private void SteeringWheels()
