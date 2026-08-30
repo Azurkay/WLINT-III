@@ -26,5 +26,10 @@ public class Timer : MonoBehaviour
             _timer -= Time.deltaTime;
             _text.text = _timer.ToString();
         }
+
+        if (_timer <= 0)
+        {
+            Debug.Log("T'es mort mon reuf");
+        }
     }
 }
