@@ -59,6 +59,11 @@ public class CamaroDrive : MonoBehaviour
         RotateWheel(_RR, _RRTransform);
     }
 
+    private void CameraMovement()
+    {
+        
+    }
+
     private void GetInput()
     {
         verticalInput = Input.GetAxis("Vertical");
