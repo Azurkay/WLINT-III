@@ -24,7 +24,6 @@ public class CamaroDrive : MonoBehaviour
     #endregion
 
     #region Attributes
-
     private float verticalInput;
     private float horizontalInput;
 
@@ -32,8 +31,8 @@ public class CamaroDrive : MonoBehaviour
 
     private void MotorForce()
     {
-        _RL.motorTorque = _motorForce * verticalInput * -1;
-        _RR.motorTorque = _motorForce * verticalInput * -1;
+        _RL.motorTorque = _motorForce * verticalInput;
+        _RR.motorTorque = _motorForce * verticalInput;
     }
 
     private void SteeringWheels()
@@ -69,9 +68,6 @@ public class CamaroDrive : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
     }
-
-
-
 
     #region Mono
 

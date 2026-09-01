@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class ThirdPersonCamera : MonoBehaviour
@@ -16,6 +17,11 @@ public class ThirdPersonCamera : MonoBehaviour
         set => _sensibility = value;
     }
 
+
+    void Start()
+    {
+        Cursor.visible = false;
+    }
     void Update()
     {
         float mouseX = Input.GetAxis("Mouse X") * Sensibility;
