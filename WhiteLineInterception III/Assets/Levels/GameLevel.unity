@@ -1089,8 +1089,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Oh no, an atomic bombe has juste explode, go to the bunker in the remaining
-    time. \nGood luck, My dear"
+  m_text: Oh no, you just break your forward gears, gringe, you are doomed, good
+    luck.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2285,55 +2285,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ba671a3d339c447438187b1cd562c4cb, type: 3}
   m_PrefabInstance: {fileID: 1499738073}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &163082554
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 163082556}
-  - component: {fileID: 163082555}
-  m_Layer: 0
-  m_Name: DestroyeForwardGears
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &163082555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 163082554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d20ab11a2d53ed54fbac5b5d98b3093c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  _camaroRef: {fileID: 0}
-  _timeToBreak: 5
-  _explanationGameObject: {fileID: 0}
-  _timeToDesableExplanation: 0
-  _inputActionReference: {fileID: -1680190386980627800, guid: 35845fe01580c41289b024647b1d1c53, type: 3}
---- !u!4 &163082556
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 163082554}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1470.0962, y: 737.37964, z: -46.2246}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &166464454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2797,14 +2748,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 218548852}
-  - component: {fileID: 218548853}
   m_Layer: 5
   m_Name: BreakExplanation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &218548852
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2826,23 +2776,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 62}
   m_SizeDelta: {x: 564.49, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &218548853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 218548851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d20ab11a2d53ed54fbac5b5d98b3093c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BreakForwardGears
-  _camaroRef: {fileID: 0}
-  _timeToBreak: 5
-  _explanationGameObject: {fileID: 0}
-  _timeToDesableExplanation: 0
-  _inputActionReference: {fileID: 0}
 --- !u!4 &221533216 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3728240293747090453, guid: 6f6a1c71490632a43a72da55d97061ed, type: 3}
@@ -3310,7 +3243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff3b0227061fe8a448a87429de05d5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _timerToBegin: 10
+  _timerToBegin: 5
 --- !u!1001 &324171906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10675,6 +10608,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba671a3d339c447438187b1cd562c4cb, type: 3}
+--- !u!1 &1611674667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1611674669}
+  - component: {fileID: 1611674668}
+  m_Layer: 0
+  m_Name: TimerToBreakForwardGears
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1611674668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611674667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d20ab11a2d53ed54fbac5b5d98b3093c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BreakForwardGears
+  _camaroRef: {fileID: 2082879413}
+  _timeToBreak: 10
+  _explanationGameObject: {fileID: 218548851}
+  _timeToDesableExplanation: 15
+--- !u!4 &1611674669
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611674667}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.00462, y: -0.71804, z: -30.77563}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1624178839 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ba671a3d339c447438187b1cd562c4cb, type: 3}
@@ -13728,6 +13709,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6fde93e5cbc2b1541be05d9dd1301a7c, type: 3}
+--- !u!114 &2082879413 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 708845154653199901, guid: cccdfab3114841840a4541d2b23b94ed, type: 3}
+  m_PrefabInstance: {fileID: 8823233204882819288}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d652430605ca0042a49b14f1d8c6ed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CamaroDrive
 --- !u!1 &2107911735
 GameObject:
   m_ObjectHideFlags: 0
@@ -14380,4 +14372,4 @@ SceneRoots:
   - {fileID: 1991192448}
   - {fileID: 731034583987619625}
   - {fileID: 1225802844}
-  - {fileID: 163082556}
+  - {fileID: 1611674669}

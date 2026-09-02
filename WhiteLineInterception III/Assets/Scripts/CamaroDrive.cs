@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -24,21 +25,40 @@ public class CamaroDrive : MonoBehaviour
     #endregion
 
     #region Attributes
-    private float verticalInput;
-    private float horizontalInput;
+    private float _verticalInput;
+    private float _horizontalInput;
+
+    private float _maxVerticalInput = 1;
+    private float _minVerticalInput = -1;
+
+    #endregion
+
+    #region Properties
+
+    public float MaxVerticalInput
+    {
+        get => _maxVerticalInput;
+        set => _maxVerticalInput = value;
+    }
+
+    public float MinVerticalInput
+    {
+        get => _minVerticalInput;
+        set => _minVerticalInput = value;
+    }
 
     #endregion
 
     private void MotorForce()
     {
-        _RL.motorTorque = _motorForce * verticalInput;
-        _RR.motorTorque = _motorForce * verticalInput;
+        _RL.motorTorque = _motorForce * _verticalInput;
+        _RR.motorTorque = _motorForce * _verticalInput;
     }
 
     private void SteeringWheels()
     {
-        _FR.steerAngle = _steeringForce * horizontalInput;
-        _FL.steerAngle = _steeringForce * horizontalInput;
+        _FR.steerAngle = _steeringForce * _horizontalInput;
+        _FL.steerAngle = _steeringForce * _horizontalInput;
     }
 
     private void RotateWheel(WheelCollider wheelCollider, Transform transform)
@@ -58,15 +78,10 @@ public class CamaroDrive : MonoBehaviour
         RotateWheel(_RR, _RRTransform);
     }
 
-    private void CameraMovement()
-    {
-        
-    }
-
     private void GetInput()
     {
-        verticalInput = Input.GetAxis("Vertical");
-        horizontalInput = Input.GetAxis("Horizontal");
+        _verticalInput = Mathf.Clamp(Input.GetAxis("Vertical"), MinVerticalInput, MaxVerticalInput);
+        _horizontalInput = Input.GetAxis("Horizontal");
     }
 
     #region Mono
@@ -78,10 +93,10 @@ public class CamaroDrive : MonoBehaviour
 
     private void Update()
     {
+        GetInput();
         MotorForce();
         SteeringWheels();
         UpdateWheel();
-        GetInput();
     }
 
     #endregion
