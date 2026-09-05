@@ -1,5 +1,9 @@
 using System;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Timeline;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class CamaroDrive : MonoBehaviour
@@ -18,8 +22,20 @@ public class CamaroDrive : MonoBehaviour
 
     [SerializeField] private float _motorForce = 100f;
     [SerializeField] private float _steeringForce = 30f;
+    [SerializeField] private float _brakeForce = 300f;
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private Transform _camaroCentreOfMass;
+
+    [SerializeField] private string[] _gearsNames = {"R",  "N",  "1",  "2",  "3"};
+    [SerializeField] private float[] _gearsRatios = {-0.5f, 0f, 0.33f, 0.66f, 1f};
+    [SerializeField] private int _currentGearIndex = 0;
+
+
+
+    [SerializeField] private ShifterView _shifterView;
+    [SerializeField] private SpeedView _speedView;
+    [SerializeField] private float _realLifeWheelSize = 35.56f;
+
 
 
     #endregion
@@ -27,9 +43,14 @@ public class CamaroDrive : MonoBehaviour
     #region Attributes
     private float _verticalInput;
     private float _horizontalInput;
+    private float _gearsInput;
 
     private float _maxVerticalInput = 1;
     private float _minVerticalInput = -1;
+
+    private float _currentSpeed = 0;
+    private float _timeToUpdateSpeedMeter = 0.1f;
+    private float _timeBeforeUpdateSpeedMeter = 0.1f;
 
     #endregion
 
@@ -51,22 +72,62 @@ public class CamaroDrive : MonoBehaviour
 
     private void MotorForce()
     {
-        if (_RL.motorTorque > 0 && _verticalInput < 0)
+        float motor = 0f;
+        float brake = 0f;
+
+        if (_verticalInput > 0f)
         {
-            _RL.motorTorque = _motorForce * _verticalInput * 100;
-            _RR.motorTorque = _motorForce * _verticalInput * 100;
-        } 
-        else
-        {
-            _RL.motorTorque = _motorForce * _verticalInput;
-            _RR.motorTorque = _motorForce * _verticalInput;
+            motor = _motorForce * _verticalInput * _gearsRatios[_currentGearIndex];
         }
+        else if (_verticalInput < 0f)
+        {
+            brake = _brakeForce * -_verticalInput;
+        }
+
+        _RL.motorTorque = motor;
+        _RR.motorTorque = motor;
+
+        _FL.brakeTorque = brake;
+        _FR.brakeTorque = brake;
+        _RL.brakeTorque = brake;
+        _RR.brakeTorque = brake;
+
+        _timeBeforeUpdateSpeedMeter = _timeBeforeUpdateSpeedMeter - Time.deltaTime;
+
+        if (_timeBeforeUpdateSpeedMeter <= 0)
+        {
+            CalculateSpeed();
+            _timeBeforeUpdateSpeedMeter = _timeToUpdateSpeedMeter;
+        }
+
     }
 
     private void SteeringWheels()
     {
         _FR.steerAngle = _steeringForce * _horizontalInput;
         _FL.steerAngle = _steeringForce * _horizontalInput;
+    }
+
+    private void ChangeGear()
+    {
+
+        if (Input.GetButtonDown("ShiftUp"))
+        {
+            _currentGearIndex++;
+        }
+        else if (Input.GetButtonDown("ShiftDown"))
+        {
+            _currentGearIndex--;
+        }
+
+        _currentGearIndex = Mathf.Clamp(_currentGearIndex, 0, _gearsRatios.Length - 1);
+
+        string previousGearName = _currentGearIndex > 0 ? _gearsNames[_currentGearIndex - 1] : "";
+        string currentGearName = _gearsNames[_currentGearIndex];
+        string nextGearName = _currentGearIndex < _gearsNames.Length - 1 ? _gearsNames[_currentGearIndex + 1] : "";
+
+        _shifterView.ShifterUpdate(previousGearName, currentGearName, nextGearName);
+
     }
 
     private void RotateWheel(WheelCollider wheelCollider, Transform transform)
@@ -76,6 +137,11 @@ public class CamaroDrive : MonoBehaviour
         wheelCollider.GetWorldPose(out pos, out rot);
         transform.position = pos;
         transform.rotation = rot;
+    }
+
+    private void CalculateSpeed()
+    {
+        _speedView.UpdateSpeedView((int)(_rb.linearVelocity.magnitude * 3.6f));
     }
 
     private void UpdateWheel()
@@ -97,11 +163,13 @@ public class CamaroDrive : MonoBehaviour
     private void Start()
     {
         _rb.centerOfMass = _camaroCentreOfMass.localPosition;
+        ChangeGear();
     }
 
     private void Update()
     {
         GetInput();
+        ChangeGear();
         MotorForce();
         SteeringWheels();
         UpdateWheel();
