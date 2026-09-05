@@ -30,6 +30,12 @@ public class CamaroDrive : MonoBehaviour
     [SerializeField] private float[] _gearsRatios = {-0.5f, 0f, 0.33f, 0.66f, 1f};
     [SerializeField] private int _currentGearIndex = 0;
 
+    [SerializeField] private float _nitroMotorForceRatio = 5;
+    [SerializeField] private float _nitroDeltaTimeDecrementRatio = 2;
+    [SerializeField] private float _nitroDeltaTimeIncrementRatio = 1;
+    [SerializeField] private float _maxNitroAmound = 1200;
+    [SerializeField] private NitroView _nitroView;
+
 
 
     [SerializeField] private ShifterView _shifterView;
@@ -43,29 +49,20 @@ public class CamaroDrive : MonoBehaviour
     #region Attributes
     private float _verticalInput;
     private float _horizontalInput;
-    private float _gearsInput;
 
-    private float _maxVerticalInput = 1;
-    private float _minVerticalInput = -1;
-
-    private float _currentSpeed = 0;
     private float _timeToUpdateSpeedMeter = 0.1f;
     private float _timeBeforeUpdateSpeedMeter = 0.1f;
+
+    private float _currentNitroAmound;
 
     #endregion
 
     #region Properties
 
-    public float MaxVerticalInput
+    public float[] GearsRatios
     {
-        get => _maxVerticalInput;
-        set => _maxVerticalInput = value;
-    }
-
-    public float MinVerticalInput
-    {
-        get => _minVerticalInput;
-        set => _minVerticalInput = value;
+        get => _gearsRatios;
+        set => _gearsRatios = value;
     }
 
     #endregion
@@ -110,7 +107,6 @@ public class CamaroDrive : MonoBehaviour
 
     private void ChangeGear()
     {
-
         if (Input.GetButtonDown("ShiftUp"))
         {
             _currentGearIndex++;
@@ -127,6 +123,38 @@ public class CamaroDrive : MonoBehaviour
         string nextGearName = _currentGearIndex < _gearsNames.Length - 1 ? _gearsNames[_currentGearIndex + 1] : "";
 
         _shifterView.ShifterUpdate(previousGearName, currentGearName, nextGearName);
+    }
+
+    private void Nitro()
+    {
+
+        bool isHeld = Input.GetButton("Nitro") && _currentNitroAmound > 0f;
+
+        if (Input.GetButtonDown("Nitro"))
+        {
+            if (_currentNitroAmound > 0)
+            {
+                _motorForce *= _nitroDeltaTimeDecrementRatio;   
+            }
+            else
+            {
+                _motorForce /= _nitroDeltaTimeDecrementRatio;                
+            }
+        }
+        else if (Input.GetButtonUp("Nitro"))
+        {
+            _motorForce /= _nitroDeltaTimeDecrementRatio;
+        }
+        if (isHeld)
+        {
+            _currentNitroAmound = Mathf.Clamp(_currentNitroAmound - Time.deltaTime * _nitroDeltaTimeDecrementRatio, 0, _maxNitroAmound);
+        }
+        else
+        {
+            _currentNitroAmound = Mathf.Clamp(_currentNitroAmound + Time.deltaTime * _nitroDeltaTimeIncrementRatio, 0, _maxNitroAmound);
+        }
+
+        _nitroView.UpdateNitro(_currentNitroAmound, _maxNitroAmound);
 
     }
 
@@ -154,7 +182,7 @@ public class CamaroDrive : MonoBehaviour
 
     private void GetInput()
     {
-        _verticalInput = Mathf.Clamp(Input.GetAxis("Vertical"), MinVerticalInput, MaxVerticalInput);
+        _verticalInput = Input.GetAxis("Vertical");
         _horizontalInput = Input.GetAxis("Horizontal");
     }
 
@@ -162,6 +190,7 @@ public class CamaroDrive : MonoBehaviour
 
     private void Start()
     {
+        _currentNitroAmound = _maxNitroAmound;
         _rb.centerOfMass = _camaroCentreOfMass.localPosition;
         ChangeGear();
     }
@@ -170,6 +199,7 @@ public class CamaroDrive : MonoBehaviour
     {
         GetInput();
         ChangeGear();
+        Nitro();
         MotorForce();
         SteeringWheels();
         UpdateWheel();

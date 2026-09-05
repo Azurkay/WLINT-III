@@ -23,7 +23,13 @@ public class BreakForwardGears : MonoBehaviour
         if (_timeToBreak <= 0)
         {
             _explanationGameObject.SetActive(true);
-            _camaroRef.MaxVerticalInput = 0;
+            for (int i = 0; i < _camaroRef.GearsRatios.Length; i++)
+            {
+                if (_camaroRef.GearsRatios[i] > 0f)
+                {
+                    _camaroRef.GearsRatios[i] = 0f;
+                }
+            }
             Object.Destroy(this, 5f);                   
         }
     }
