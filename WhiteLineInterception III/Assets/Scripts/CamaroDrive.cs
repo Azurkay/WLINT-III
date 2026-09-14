@@ -1,9 +1,4 @@
-using System;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Timeline;
-using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class CamaroDrive : MonoBehaviour
@@ -26,7 +21,7 @@ public class CamaroDrive : MonoBehaviour
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private Transform _camaroCentreOfMass;
 
-    [SerializeField] private string[] _gearsNames = {"R",  "N",  "1",  "2",  "3"};
+    [SerializeField] private Sprite[] _gearsImages;
     [SerializeField] private float[] _gearsRatios = {-0.5f, 0f, 0.33f, 0.66f, 1f};
     [SerializeField] private int _currentGearIndex = 0;
 
@@ -42,7 +37,7 @@ public class CamaroDrive : MonoBehaviour
     [SerializeField] private SpeedView _speedView;
     [SerializeField] private float _realLifeWheelSize = 35.56f;
 
-
+    //65656664
 
     #endregion
 
@@ -118,11 +113,11 @@ public class CamaroDrive : MonoBehaviour
 
         _currentGearIndex = Mathf.Clamp(_currentGearIndex, 0, _gearsRatios.Length - 1);
 
-        string previousGearName = _currentGearIndex > 0 ? _gearsNames[_currentGearIndex - 1] : "";
-        string currentGearName = _gearsNames[_currentGearIndex];
-        string nextGearName = _currentGearIndex < _gearsNames.Length - 1 ? _gearsNames[_currentGearIndex + 1] : "";
+        Sprite previousGearImage = _currentGearIndex > 0 ? _gearsImages[_currentGearIndex - 1] : null;
+        Sprite currentGearImage = _gearsImages[_currentGearIndex];
+        Sprite nextGearImage = _currentGearIndex < _gearsImages.Length - 1 ? _gearsImages[_currentGearIndex + 1]: null;
 
-        _shifterView.ShifterUpdate(previousGearName, currentGearName, nextGearName);
+        _shifterView.ShifterUpdate(previousGearImage, currentGearImage, nextGearImage);
     }
 
     private void Nitro()
