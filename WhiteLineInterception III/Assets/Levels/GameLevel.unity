@@ -77441,12 +77441,12 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 377100996}
   - {fileID: 1860322431}
   - {fileID: 1036004667}
   - {fileID: 762693493}
   - {fileID: 83477571}
   - {fileID: 563098527}
+  - {fileID: 377100996}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -258803,7 +258803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1471863419
 Transform:
   m_ObjectHideFlags: 0
@@ -378882,6 +378882,10 @@ PrefabInstance:
       propertyPath: _speedView
       value: 
       objectReference: {fileID: 1860322434}
+    - target: {fileID: 708845154653199901, guid: cccdfab3114841840a4541d2b23b94ed, type: 3}
+      propertyPath: _brakeForce
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 708845154653199901, guid: cccdfab3114841840a4541d2b23b94ed, type: 3}
       propertyPath: _shifterView
       value: 
