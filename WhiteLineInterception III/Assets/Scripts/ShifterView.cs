@@ -13,5 +13,13 @@ public class ShifterView : MonoBehaviour
         _previousGearImage.sprite = previousGearImage;
         _currentGearImage.sprite = currentGearImage;
         _nextGearImage.sprite = nextGearImage;
+        if (previousGearImage == null)
+        {
+            _previousGearImage.color = new Color(0, 0, 0, 0);
+        }
+        else if (nextGearImage == null)
+        {
+            _previousGearImage.color = new Color(0, 0, 0, 0);
+        }
     }
 }
