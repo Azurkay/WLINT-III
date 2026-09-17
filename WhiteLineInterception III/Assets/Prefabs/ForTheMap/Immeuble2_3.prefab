@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Immeuble2_3
       objectReference: {fileID: 0}
+    - target: {fileID: -4683540352185398802, guid: e1cccbfb7639f514b9ffb2a5f765d013, type: 3}
+      propertyPath: m_TagString
+      value: Undestructible
+      objectReference: {fileID: 0}
     - target: {fileID: -3984477608134442362, guid: e1cccbfb7639f514b9ffb2a5f765d013, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4
@@ -67,5 +71,58 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -4683540352185398802, guid: e1cccbfb7639f514b9ffb2a5f765d013, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5878806560060470956}
+    - targetCorrespondingSourceObject: {fileID: -4683540352185398802, guid: e1cccbfb7639f514b9ffb2a5f765d013, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7496634531534246755}
   m_SourcePrefab: {fileID: 3150474306388093854, guid: e1cccbfb7639f514b9ffb2a5f765d013, type: 3}
+--- !u!1 &7839461506301814223 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -4683540352185398802, guid: e1cccbfb7639f514b9ffb2a5f765d013, type: 3}
+  m_PrefabInstance: {fileID: 6038170866414513185}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5878806560060470956
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839461506301814223}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 13, y: 60.81151, z: 18.6}
+  m_Center: {x: -0.016983984, y: 30.40575, z: -0.06750106}
+--- !u!65 &7496634531534246755
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839461506301814223}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 25, y: 0.34, z: 24.999998}
+  m_Center: {x: -0.016983984, y: 0.16, z: -0.06750106}

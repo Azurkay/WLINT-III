@@ -19,7 +19,7 @@ public class ShifterView : MonoBehaviour
         }
         else if (nextGearImage == null)
         {
-            _previousGearImage.color = new Color(0, 0, 0, 0);
+            _nextGearImage.color = new Color(0, 0, 0, 0);
         }
     }
 }
