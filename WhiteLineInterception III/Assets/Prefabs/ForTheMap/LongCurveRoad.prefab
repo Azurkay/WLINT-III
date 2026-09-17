@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5119976067248880501}
   - component: {fileID: 3976054461708230388}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BoxColliider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,6 +120,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e89f103c7553e2241b1bd835c3213ac6, type: 3}
       propertyPath: m_Name
       value: LongCurveRoad
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e89f103c7553e2241b1bd835c3213ac6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e89f103c7553e2241b1bd835c3213ac6, type: 3}
       propertyPath: m_TagString

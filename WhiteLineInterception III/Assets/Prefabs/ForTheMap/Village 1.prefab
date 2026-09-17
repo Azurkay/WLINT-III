@@ -111,6 +111,10 @@ PrefabInstance:
       value: Palmtree (1)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 37bc0086e96b8794e9f89427203f53d4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 37bc0086e96b8794e9f89427203f53d4, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -204,6 +208,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 547597e5d5219c5448116ea69063c3a0, type: 3}
       propertyPath: m_Name
       value: Temple1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 547597e5d5219c5448116ea69063c3a0, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 547597e5d5219c5448116ea69063c3a0, type: 3}
       propertyPath: m_TagString
@@ -301,6 +309,10 @@ PrefabInstance:
       value: MoyenCaillou (6)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -394,6 +406,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
       propertyPath: m_Name
       value: GrosCailloux (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
       propertyPath: m_TagString
@@ -491,6 +507,10 @@ PrefabInstance:
       value: Temple2 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ba671a3d339c447438187b1cd562c4cb, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ba671a3d339c447438187b1cd562c4cb, type: 3}
       propertyPath: m_TagString
       value: Undestructible
       objectReference: {fileID: 0}
@@ -584,6 +604,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
       propertyPath: m_Name
       value: GrosCactus (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
       propertyPath: m_TagString
@@ -681,6 +705,10 @@ PrefabInstance:
       value: MoyenCaillou (1)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -774,6 +802,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
       propertyPath: m_Name
       value: MoyenCaillou (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
       propertyPath: m_TagString
@@ -871,6 +903,10 @@ PrefabInstance:
       value: MoyenCaillou (7)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -964,6 +1000,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
       propertyPath: m_Name
       value: GrosCailloux (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
       propertyPath: m_TagString
@@ -1061,6 +1101,10 @@ PrefabInstance:
       value: MoyenCaillou (5)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -1154,6 +1198,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
       propertyPath: m_Name
       value: MoyenCaillou
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
       propertyPath: m_TagString
@@ -1251,6 +1299,10 @@ PrefabInstance:
       value: GrosCailloux
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -1344,6 +1396,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ba671a3d339c447438187b1cd562c4cb, type: 3}
       propertyPath: m_Name
       value: Temple2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ba671a3d339c447438187b1cd562c4cb, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ba671a3d339c447438187b1cd562c4cb, type: 3}
       propertyPath: m_TagString
@@ -1441,6 +1497,10 @@ PrefabInstance:
       value: GrosCailloux (2)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -1534,6 +1594,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
       propertyPath: m_Name
       value: GrosCactus (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
       propertyPath: m_TagString
@@ -1631,6 +1695,10 @@ PrefabInstance:
       value: Palmtree (3)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 37bc0086e96b8794e9f89427203f53d4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 37bc0086e96b8794e9f89427203f53d4, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -1724,6 +1792,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
       propertyPath: m_Name
       value: GrosCailloux (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
       propertyPath: m_TagString
@@ -1821,6 +1893,10 @@ PrefabInstance:
       value: Palmtree
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 37bc0086e96b8794e9f89427203f53d4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 37bc0086e96b8794e9f89427203f53d4, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -1914,6 +1990,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 37bc0086e96b8794e9f89427203f53d4, type: 3}
       propertyPath: m_Name
       value: Palmtree (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 37bc0086e96b8794e9f89427203f53d4, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 37bc0086e96b8794e9f89427203f53d4, type: 3}
       propertyPath: m_TagString
@@ -2011,6 +2091,10 @@ PrefabInstance:
       value: Fontaine
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b5e19099af55d3a46a20f2eca8881716, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b5e19099af55d3a46a20f2eca8881716, type: 3}
       propertyPath: m_TagString
       value: Undestructible
       objectReference: {fileID: 0}
@@ -2104,6 +2188,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
       propertyPath: m_Name
       value: GrosCactus
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
       propertyPath: m_TagString
@@ -2201,6 +2289,10 @@ PrefabInstance:
       value: Temple3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6fde93e5cbc2b1541be05d9dd1301a7c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6fde93e5cbc2b1541be05d9dd1301a7c, type: 3}
       propertyPath: m_TagString
       value: Undestructible
       objectReference: {fileID: 0}
@@ -2294,6 +2386,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
       propertyPath: m_Name
       value: GrosCailloux (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
       propertyPath: m_TagString
@@ -2391,6 +2487,10 @@ PrefabInstance:
       value: MoyenCaillou (3)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -2486,6 +2586,10 @@ PrefabInstance:
       value: MoyenCaillou (4)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -2579,6 +2683,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
       propertyPath: m_Name
       value: GrosCactus (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
       propertyPath: m_TagString

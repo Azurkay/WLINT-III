@@ -10,10 +10,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Undestructible
   - Water
   - UI
-  - 
+  - Destructible
   - 
   - 
   - 

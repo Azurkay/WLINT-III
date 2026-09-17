@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RouteCoude
       objectReference: {fileID: 0}
+    - target: {fileID: 8057030019230921102, guid: db6a3d5a5840c18469499add90634d19, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

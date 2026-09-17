@@ -105,6 +105,10 @@ PrefabInstance:
       value: PetitCactus (6)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 94382d24d6e27dd4d85d780fda2907cb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 94382d24d6e27dd4d85d780fda2907cb, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -198,6 +202,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ba671a3d339c447438187b1cd562c4cb, type: 3}
       propertyPath: m_Name
       value: Temple2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ba671a3d339c447438187b1cd562c4cb, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ba671a3d339c447438187b1cd562c4cb, type: 3}
       propertyPath: m_TagString
@@ -295,6 +303,10 @@ PrefabInstance:
       value: GrosCailloux (1)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -388,6 +400,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3e2c6b19b041cd74cbe907be3ee6a087, type: 3}
       propertyPath: m_Name
       value: PetitCaillou (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e2c6b19b041cd74cbe907be3ee6a087, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3e2c6b19b041cd74cbe907be3ee6a087, type: 3}
       propertyPath: m_TagString
@@ -485,6 +501,10 @@ PrefabInstance:
       value: GrosCactus (1)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -578,6 +598,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
       propertyPath: m_Name
       value: GrosCailloux
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 38a55fe933121694d9fe7398a133f82d, type: 3}
       propertyPath: m_TagString
@@ -675,6 +699,10 @@ PrefabInstance:
       value: MoyenCaillou (2)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -768,6 +796,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 94382d24d6e27dd4d85d780fda2907cb, type: 3}
       propertyPath: m_Name
       value: PetitCactus (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 94382d24d6e27dd4d85d780fda2907cb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 94382d24d6e27dd4d85d780fda2907cb, type: 3}
       propertyPath: m_TagString
@@ -865,6 +897,10 @@ PrefabInstance:
       value: MoyenCaillou (1)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -958,6 +994,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3e2c6b19b041cd74cbe907be3ee6a087, type: 3}
       propertyPath: m_Name
       value: PetitCaillou
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e2c6b19b041cd74cbe907be3ee6a087, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3e2c6b19b041cd74cbe907be3ee6a087, type: 3}
       propertyPath: m_TagString
@@ -1055,6 +1095,10 @@ PrefabInstance:
       value: PetitCactus
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 94382d24d6e27dd4d85d780fda2907cb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 94382d24d6e27dd4d85d780fda2907cb, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -1148,6 +1192,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 94382d24d6e27dd4d85d780fda2907cb, type: 3}
       propertyPath: m_Name
       value: PetitCactus (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 94382d24d6e27dd4d85d780fda2907cb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 94382d24d6e27dd4d85d780fda2907cb, type: 3}
       propertyPath: m_TagString
@@ -1245,6 +1293,10 @@ PrefabInstance:
       value: PetitCactus (3)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 94382d24d6e27dd4d85d780fda2907cb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 94382d24d6e27dd4d85d780fda2907cb, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -1338,6 +1390,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 94382d24d6e27dd4d85d780fda2907cb, type: 3}
       propertyPath: m_Name
       value: PetitCactus (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 94382d24d6e27dd4d85d780fda2907cb, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 94382d24d6e27dd4d85d780fda2907cb, type: 3}
       propertyPath: m_TagString
@@ -1435,6 +1491,10 @@ PrefabInstance:
       value: MoyenCaillou
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0a798aa3767ace641a9b4cb4ab984513, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -1528,6 +1588,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
       propertyPath: m_Name
       value: GrosCactus (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
       propertyPath: m_TagString
@@ -1625,6 +1689,10 @@ PrefabInstance:
       value: PetitCactus (1)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 94382d24d6e27dd4d85d780fda2907cb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 94382d24d6e27dd4d85d780fda2907cb, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -1718,6 +1786,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
       propertyPath: m_Name
       value: GrosCactus
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 860fe967a506d8a449eed9440d946a91, type: 3}
       propertyPath: m_TagString
@@ -1815,6 +1887,10 @@ PrefabInstance:
       value: PetitCaillou (2)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3e2c6b19b041cd74cbe907be3ee6a087, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e2c6b19b041cd74cbe907be3ee6a087, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -1910,6 +1986,10 @@ PrefabInstance:
       value: PetitCactus (2)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 94382d24d6e27dd4d85d780fda2907cb, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 94382d24d6e27dd4d85d780fda2907cb, type: 3}
       propertyPath: m_TagString
       value: Destructible
       objectReference: {fileID: 0}
@@ -2003,6 +2083,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 547597e5d5219c5448116ea69063c3a0, type: 3}
       propertyPath: m_Name
       value: Temple1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 547597e5d5219c5448116ea69063c3a0, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 547597e5d5219c5448116ea69063c3a0, type: 3}
       propertyPath: m_TagString

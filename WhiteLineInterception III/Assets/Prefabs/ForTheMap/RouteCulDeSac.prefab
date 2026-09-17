@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RouteCulDeSac
       objectReference: {fileID: 0}
+    - target: {fileID: 6190168404155244913, guid: da265a876564b3743a90cc9fd3cf3976, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

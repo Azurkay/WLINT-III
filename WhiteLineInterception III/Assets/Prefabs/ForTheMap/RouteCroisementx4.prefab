@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RouteCroisementx4
       objectReference: {fileID: 0}
+    - target: {fileID: -684402567920896363, guid: 169ea018145dc8e42be9d32182b21da9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4775640227907809390, guid: 169ea018145dc8e42be9d32182b21da9, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4

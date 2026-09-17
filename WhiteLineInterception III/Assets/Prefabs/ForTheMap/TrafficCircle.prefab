@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7994961067096416988}
   - component: {fileID: 4583721141279253065}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BoxCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,6 +120,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: acb0f2adb9ddf354689fba4d2b65f289, type: 3}
       propertyPath: m_Name
       value: TrafficCircle
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: acb0f2adb9ddf354689fba4d2b65f289, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

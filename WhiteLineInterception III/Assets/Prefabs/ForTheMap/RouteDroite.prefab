@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5930285611393474370}
   - component: {fileID: 3801325838607874331}
   - component: {fileID: 3581215209868726482}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RouteDroite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

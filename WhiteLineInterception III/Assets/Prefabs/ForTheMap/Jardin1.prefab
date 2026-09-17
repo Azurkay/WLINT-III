@@ -13,6 +13,10 @@ PrefabInstance:
       value: Jardin1
       objectReference: {fileID: 0}
     - target: {fileID: -5372335637053171514, guid: 3b064295b9fe7244b93694b4820a45d6, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -5372335637053171514, guid: 3b064295b9fe7244b93694b4820a45d6, type: 3}
       propertyPath: m_TagString
       value: Undestructible
       objectReference: {fileID: 0}

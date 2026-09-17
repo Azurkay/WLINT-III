@@ -94,6 +94,14 @@ public class CamaroDrive : MonoBehaviour
 
     }
 
+    public void SlowDownCar(float brakeForce)
+    {
+        _FL.brakeTorque = brakeForce;
+        _FR.brakeTorque = brakeForce;
+        _RL.brakeTorque = brakeForce;
+        _RR.brakeTorque = brakeForce;
+    }
+
     private void SteeringWheels()
     {
         _FR.steerAngle = _steeringForce * _horizontalInput;

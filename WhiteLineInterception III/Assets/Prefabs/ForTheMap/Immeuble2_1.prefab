@@ -13,6 +13,10 @@ PrefabInstance:
       value: Immeuble2_1
       objectReference: {fileID: 0}
     - target: {fileID: 1505033139974481199, guid: 9b969f1ee85d7624ea199f48d6d9942c, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505033139974481199, guid: 9b969f1ee85d7624ea199f48d6d9942c, type: 3}
       propertyPath: m_TagString
       value: Undestructible
       objectReference: {fileID: 0}
