@@ -22,7 +22,9 @@ public class CamaroDrive : MonoBehaviour
     [SerializeField] private Transform _camaroCentreOfMass;
 
     [SerializeField] private Sprite[] _gearsImages;
+    [SerializeField] private Sprite[] _gearsImagesAfterUnlock;
     [SerializeField] private float[] _gearsRatios = {-0.5f, 0f, 0.33f, 0.66f, 1f};
+    [SerializeField] private float[] _gearsRatiosAfterUnlock = {4f, 1.5f, -0.5f, 0f, 0.33f, 0.66f, 1f};
     [SerializeField] private int _currentGearIndex = 0;
 
     [SerializeField] private float _nitroMotorForceRatio = 5;
@@ -37,7 +39,13 @@ public class CamaroDrive : MonoBehaviour
     [SerializeField] private SpeedView _speedView;
     [SerializeField] private float _realLifeWheelSize = 35.56f;
 
-    //65656664
+    
+    [SerializeField] private AudioSource _motorSound;
+    [SerializeField] private AudioSource _motorEffectSound;
+    [SerializeField] private AudioClip _engineStart;
+    [SerializeField] private AudioClip _forwardGearsExplode;
+    [SerializeField] private AudioClip _engine;
+    [SerializeField] private AudioClip _engineIdle;
 
     #endregion
 
@@ -49,6 +57,7 @@ public class CamaroDrive : MonoBehaviour
     private float _timeBeforeUpdateSpeedMeter = 0.1f;
 
     private float _currentNitroAmound;
+    private bool _nitroUnlock = false;
 
     #endregion
 
@@ -58,6 +67,12 @@ public class CamaroDrive : MonoBehaviour
     {
         get => _gearsRatios;
         set => _gearsRatios = value;
+    }
+
+    public bool NitroUnlock
+    {
+        get => _nitroUnlock;
+        set => _nitroUnlock = value;
     }
 
     #endregion
@@ -130,35 +145,36 @@ public class CamaroDrive : MonoBehaviour
 
     private void Nitro()
     {
-
-        bool isHeld = Input.GetButton("Nitro") && _currentNitroAmound > 0f;
-
-        if (Input.GetButtonDown("Nitro"))
+        if (NitroUnlock == true)
         {
-            if (_currentNitroAmound > 0)
+            bool isHeld = Input.GetButton("Nitro") && _currentNitroAmound > 0f;
+
+            if (Input.GetButtonDown("Nitro"))
             {
-                _motorForce *= _nitroDeltaTimeDecrementRatio;   
+                if (_currentNitroAmound > 0)
+                {
+                    _motorForce *= _nitroDeltaTimeDecrementRatio;   
+                }
+                else
+                {
+                    _motorForce /= _nitroDeltaTimeDecrementRatio;                
+                }
+            }
+            else if (Input.GetButtonUp("Nitro"))
+            {
+                _motorForce /= _nitroDeltaTimeDecrementRatio;
+            }
+            if (isHeld)
+            {
+                _currentNitroAmound = Mathf.Clamp(_currentNitroAmound - Time.deltaTime * _nitroDeltaTimeDecrementRatio, 0, _maxNitroAmound);
             }
             else
             {
-                _motorForce /= _nitroDeltaTimeDecrementRatio;                
+                _currentNitroAmound = Mathf.Clamp(_currentNitroAmound + Time.deltaTime * _nitroDeltaTimeIncrementRatio, 0, _maxNitroAmound);
             }
-        }
-        else if (Input.GetButtonUp("Nitro"))
-        {
-            _motorForce /= _nitroDeltaTimeDecrementRatio;
-        }
-        if (isHeld)
-        {
-            _currentNitroAmound = Mathf.Clamp(_currentNitroAmound - Time.deltaTime * _nitroDeltaTimeDecrementRatio, 0, _maxNitroAmound);
-        }
-        else
-        {
-            _currentNitroAmound = Mathf.Clamp(_currentNitroAmound + Time.deltaTime * _nitroDeltaTimeIncrementRatio, 0, _maxNitroAmound);
-        }
 
-        _nitroView.UpdateNitro(_currentNitroAmound, _maxNitroAmound);
-
+            _nitroView.UpdateNitro(_currentNitroAmound, _maxNitroAmound);
+        }
     }
 
     private void RotateWheel(WheelCollider wheelCollider, Transform transform)
@@ -182,11 +198,17 @@ public class CamaroDrive : MonoBehaviour
         RotateWheel(_RL, _RLTransform);
         RotateWheel(_RR, _RRTransform);
     }
-
+    
     private void GetInput()
     {
         _verticalInput = Input.GetAxis("Vertical");
         _horizontalInput = Input.GetAxis("Horizontal");
+    }
+
+    public void UnlockBackwardGears()
+    {
+        _gearsImages = _gearsImagesAfterUnlock;
+        _gearsRatios = _gearsRatiosAfterUnlock;
     }
 
     #region Mono
