@@ -7,31 +7,29 @@ public class BreakForwardGears : MonoBehaviour
 {
 
     [SerializeField] private CamaroDrive _camaroRef;
-    [SerializeField] private float _timeToBreak = 5;
     [SerializeField] private TextMeshProUGUI _explanationGameObject;
     [SerializeField] private String _explanationText = "Oh the forward gears juste broked";
     [SerializeField] private float _timeToDesableExplanation;
+    [SerializeField] private AudioSource _audioSource;
 
     void Start()
     {
-        _explanationGameObject.text = "";
-        Destroy(gameObject, _timeToDesableExplanation);
+        _explanationGameObject.text = _explanationText;
+        _explanationGameObject.gameObject.SetActive(false);
     }
 
-
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        _timeToBreak -= Time.deltaTime;
-        if (_timeToBreak <= 0)
+        _audioSource.Play();
+        _camaroRef.SlowDownCar(300);
+        Destroy(_explanationGameObject, _timeToDesableExplanation);
+        _explanationGameObject.gameObject.SetActive(true);
+        for (int i = 0; i < _camaroRef.GearsRatios.Length; i++)
         {
-            _explanationGameObject.text = _explanationText;
-            for (int i = 0; i < _camaroRef.GearsRatios.Length; i++)
+            if (_camaroRef.GearsRatios[i] > 0f)
             {
-                if (_camaroRef.GearsRatios[i] > 0f)
-                {
-                    _camaroRef.GearsRatios[i] = 0f;
-                }
+                _camaroRef.GearsRatios[i] = 0f;
             }
-        }
+         }
     }
 }

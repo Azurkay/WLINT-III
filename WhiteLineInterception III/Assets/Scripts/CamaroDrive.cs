@@ -43,9 +43,8 @@ public class CamaroDrive : MonoBehaviour
     [SerializeField] private AudioSource _motorSound;
     [SerializeField] private AudioSource _motorEffectSound;
     [SerializeField] private AudioClip _engineStart;
-    [SerializeField] private AudioClip _forwardGearsExplode;
-    [SerializeField] private AudioClip _engine;
-    [SerializeField] private AudioClip _engineIdle;
+    [SerializeField] private AudioClip _nitroSound;
+    [SerializeField] private AudioClip _unlockBackwardGearsSound;
 
     #endregion
 
@@ -75,9 +74,21 @@ public class CamaroDrive : MonoBehaviour
         set => _nitroUnlock = value;
     }
 
+    public Rigidbody RB
+    {
+        get => _rb;
+        set => _rb = value;
+    }
+
+    public float MotorForce
+    {
+        get => _motorForce;
+        set => _motorForce = value;
+    }
+
     #endregion
 
-    private void MotorForce()
+    private void MotorForceCarInput()
     {
         float motor = 0f;
         float brake = 0f;
@@ -107,6 +118,11 @@ public class CamaroDrive : MonoBehaviour
             _timeBeforeUpdateSpeedMeter = _timeToUpdateSpeedMeter;
         }
 
+    }
+
+    private void MotorSound()
+    {
+        _motorSound.pitch = 1 + ((_rb.linearVelocity.magnitude * 3.6f) / 100);
     }
 
     public void SlowDownCar(float brakeForce)
@@ -159,6 +175,8 @@ public class CamaroDrive : MonoBehaviour
                 {
                     _motorForce /= _nitroDeltaTimeDecrementRatio;                
                 }
+                //_rb.linearVelocity = transform.forward * 200;
+                // Truc stylé à faire ici
             }
             else if (Input.GetButtonUp("Nitro"))
             {
@@ -225,9 +243,10 @@ public class CamaroDrive : MonoBehaviour
         GetInput();
         ChangeGear();
         Nitro();
-        MotorForce();
+        MotorForceCarInput();
         SteeringWheels();
         UpdateWheel();
+        MotorSound();
     }
 
     #endregion
