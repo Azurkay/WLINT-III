@@ -25,7 +25,6 @@ public class BreakForwardGears : MonoBehaviour
     {
         _audioSource.Play();
         _haveToSlowDown = true;
-        Debug.Log(_haveToSlowDown);
         Destroy(_explanationGameObject, _timeToDesableExplanation);
         Destroy(gameObject, _timeToDesableExplanation + 2f);
         _explanationGameObject.gameObject.SetActive(true);

@@ -80,10 +80,10 @@ public class CamaroDrive : MonoBehaviour
         set => _rb = value;
     }
 
-    public float MotorForce
+    public AudioSource MotorEffectSound
     {
-        get => _motorForce;
-        set => _motorForce = value;
+        get => _motorEffectSound;
+        set => _motorEffectSound = value;
     }
 
     #endregion
