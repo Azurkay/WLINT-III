@@ -37964,10 +37964,10 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 725.98
+  MaxDistance: 32.77
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -458342,6 +458342,10 @@ PrefabInstance:
     - target: {fileID: 1901017546323177827, guid: cccdfab3114841840a4541d2b23b94ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6360749041516475517, guid: cccdfab3114841840a4541d2b23b94ed, type: 3}
+      propertyPath: m_Volume
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 8412762859958508370, guid: cccdfab3114841840a4541d2b23b94ed, type: 3}
       propertyPath: m_Name

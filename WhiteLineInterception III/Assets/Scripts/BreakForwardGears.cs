@@ -43,11 +43,9 @@ public class BreakForwardGears : MonoBehaviour
         if (_haveToSlowDown == true)
         {
             _camaroRef.SlowDownCar(6000);
-            Debug.Log("SlowDown");
             if (_camaroRef.RB.linearVelocity.magnitude * 3.6f < _speedToSlowDown)
             {
                 _haveToSlowDown = false;
-                Debug.Log("Stop to SlowDown");
             }
         }
     }
