@@ -46,7 +46,7 @@ BoxCollider:
     m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 63
+    m_Bits: 959
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -112,7 +112,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 60b964df9a0b8474bac31c3981a03a92, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -371,7 +371,7 @@ BoxCollider:
     m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 63
+    m_Bits: 959
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -438,7 +438,7 @@ BoxCollider:
     m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 63
+    m_Bits: 959
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -505,7 +505,7 @@ BoxCollider:
     m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 63
+    m_Bits: 959
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -619,15 +619,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3182241085182811710, guid: ef19e8035d4b14a4f8eb748c47e0fde9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 176.05
+      value: 185.38
       objectReference: {fileID: 0}
     - target: {fileID: 3182241085182811710, guid: ef19e8035d4b14a4f8eb748c47e0fde9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.72
+      value: 1.73
       objectReference: {fileID: 0}
     - target: {fileID: 3182241085182811710, guid: ef19e8035d4b14a4f8eb748c47e0fde9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -153.61
+      value: -147.87
       objectReference: {fileID: 0}
     - target: {fileID: 3182241085182811710, guid: ef19e8035d4b14a4f8eb748c47e0fde9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -694,6 +694,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4584102447483810112, guid: ef19e8035d4b14a4f8eb748c47e0fde9, type: 3}
+      propertyPath: _motorEffectSound
+      value: 
+      objectReference: {fileID: 614994765685466163}
+    - target: {fileID: 4584102447483810112, guid: ef19e8035d4b14a4f8eb748c47e0fde9, type: 3}
       propertyPath: _gearsImages.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -729,6 +733,38 @@ PrefabInstance:
       propertyPath: '_gearsRatios.Array.data[4]'
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4584102447483810112, guid: ef19e8035d4b14a4f8eb748c47e0fde9, type: 3}
+      propertyPath: _gearsImagesAfterUnlock.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4584102447483810112, guid: ef19e8035d4b14a4f8eb748c47e0fde9, type: 3}
+      propertyPath: '_gearsImagesAfterUnlock.Array.data[0]'
+      value: 
+      objectReference: {fileID: 21300000, guid: c01dd0a780e4fb448a99c3342b346afb, type: 3}
+    - target: {fileID: 4584102447483810112, guid: ef19e8035d4b14a4f8eb748c47e0fde9, type: 3}
+      propertyPath: '_gearsImagesAfterUnlock.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: e13c18e947115b34780ec0c24c646f2d, type: 3}
+    - target: {fileID: 4584102447483810112, guid: ef19e8035d4b14a4f8eb748c47e0fde9, type: 3}
+      propertyPath: '_gearsImagesAfterUnlock.Array.data[2]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 89fe335309239924684c4657740fe3cc, type: 3}
+    - target: {fileID: 4584102447483810112, guid: ef19e8035d4b14a4f8eb748c47e0fde9, type: 3}
+      propertyPath: '_gearsImagesAfterUnlock.Array.data[3]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 974fb8b5b481c3a46ba5b24a24d850b6, type: 3}
+    - target: {fileID: 4584102447483810112, guid: ef19e8035d4b14a4f8eb748c47e0fde9, type: 3}
+      propertyPath: '_gearsImagesAfterUnlock.Array.data[4]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 628ad9dc142ea9e47bc83465b4aa4f91, type: 3}
+    - target: {fileID: 4584102447483810112, guid: ef19e8035d4b14a4f8eb748c47e0fde9, type: 3}
+      propertyPath: '_gearsImagesAfterUnlock.Array.data[5]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 61e46d454789b5e4bbe1e9c5cdcb1917, type: 3}
+    - target: {fileID: 4584102447483810112, guid: ef19e8035d4b14a4f8eb748c47e0fde9, type: 3}
+      propertyPath: '_gearsImagesAfterUnlock.Array.data[6]'
+      value: 
+      objectReference: {fileID: 21300000, guid: f48f30c19b2590e47aabc0108400c34b, type: 3}
     - target: {fileID: 4666699477239135745, guid: ef19e8035d4b14a4f8eb748c47e0fde9, type: 3}
       propertyPath: m_LocalPosition.z
       value: 1.392
