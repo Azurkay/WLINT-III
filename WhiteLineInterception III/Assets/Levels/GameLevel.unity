@@ -287376,6 +287376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1294444340}
+  - component: {fileID: 1294444343}
   - component: {fileID: 1294444341}
   - component: {fileID: 1294444342}
   m_Layer: 0
@@ -287449,9 +287450,42 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1294444343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294444338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 219dfd9cab29a2a4699f21eb8d75d1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ziak
+  player: {fileID: 2082879414}
+  repathInterval: 0.25
+  directChaseDistance: 25
+  stopDistance: 6
+  frontLeft: {fileID: 1633627583}
+  frontRight: {fileID: 1773753120}
+  rearLeft: {fileID: 433551651}
+  rearRight: {fileID: 1601252772}
+  frontLeftMesh: {fileID: 0}
+  frontRightMesh: {fileID: 0}
+  rearLeftMesh: {fileID: 0}
+  rearRightMesh: {fileID: 0}
+  motorTorque: 800
+  brakeTorque: 3000
+  maxWheelAngle: 30
+  maxSpeed: 236
+  fullLockAngle: 45
+  centerOfMass: {x: 0, y: -0.5, z: 0}
+  stuckSpeed: 1
+  stuckTime: 1.5
+  reverseTime: 1.2
 --- !u!1001 &1294633808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -457387,17 +457421,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5357627095514666821, guid: f410055f078509d4fb00acf4aa071640, type: 3}
   m_PrefabInstance: {fileID: 868803858}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2082879413 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 708845154653199901, guid: cccdfab3114841840a4541d2b23b94ed, type: 3}
+--- !u!4 &2082879414 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1901017546323177827, guid: cccdfab3114841840a4541d2b23b94ed, type: 3}
   m_PrefabInstance: {fileID: 8823233204882819288}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d652430605ca0042a49b14f1d8c6ed4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CamaroDrive
 --- !u!1001 &2082907632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -472227,7 +472255,7 @@ PrefabInstance:
     - target: {fileID: 1908091889232250913, guid: 3586533d7733c3a4fafd9334d71713e1, type: 3}
       propertyPath: _camaroRef
       value: 
-      objectReference: {fileID: 2082879413}
+      objectReference: {fileID: 0}
     - target: {fileID: 1908091889232250913, guid: 3586533d7733c3a4fafd9334d71713e1, type: 3}
       propertyPath: _explanationGameObject
       value: 
