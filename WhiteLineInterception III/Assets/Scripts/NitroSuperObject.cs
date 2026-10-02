@@ -7,6 +7,7 @@ public class NitroSuperObject : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         _camaroRef.NitroUnlock = true;
+        _camaroRef.SetActiveNitroView();
         _camaroRef.MotorEffectSound.clip = _audioClip;
         _camaroRef.MotorEffectSound.Play();
         Destroy(gameObject);

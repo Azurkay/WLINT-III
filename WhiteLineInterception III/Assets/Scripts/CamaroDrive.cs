@@ -159,6 +159,10 @@ public class CamaroDrive : MonoBehaviour
         _shifterView.ShifterUpdate(previousGearImage, currentGearImage, nextGearImage);
     }
 
+    public void SetActiveNitroView()
+    {
+        _nitroView.gameObject.SetActive(true);
+    }
     private void Nitro()
     {
         if (NitroUnlock == true)
@@ -176,7 +180,7 @@ public class CamaroDrive : MonoBehaviour
                     _motorForce /= _nitroDeltaTimeDecrementRatio;                
                 }
                 //_rb.linearVelocity = transform.forward * 200;
-                // Truc stylé à faire ici
+                // Truc stylÃ© Ã  faire ici
             }
             else if (Input.GetButtonUp("Nitro"))
             {
