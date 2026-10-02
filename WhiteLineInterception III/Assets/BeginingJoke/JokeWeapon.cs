@@ -10,8 +10,7 @@ public class JokeWeapon : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Destroy(other.gameObject);
-        Debug.Log("zzeoijzejgzejgzoeij");
-        Destroy(this.gameObject, 0.5f);
+        Destroy(this.gameObject, 0.1f);
     }
 
     private void Start()

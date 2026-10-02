@@ -1,164 +1,162 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(NavMeshAgent))]
 public class Ziak : MonoBehaviour
 {
-    [Header("Cible")]
-    public Transform player;
-    public float repathInterval = 0.25f;
-    public float directChaseDistance = 25f;
-    public float stopDistance = 6f;
+    [Header("Purchase")]
+    [SerializeField] private Transform _player;
+    [SerializeField] private float _repathInterval = 0.25f;
+    [SerializeField] private float _directChaseDistance = 25f;
+    [SerializeField] private float _stopDistance = 6f;
 
-    [Header("Roues (colliders)")]
-    public WheelCollider frontLeft;
-    public WheelCollider frontRight;
-    public WheelCollider rearLeft;
-    public WheelCollider rearRight;
+    [Header("Wheel Colliders")]
+    [SerializeField] private WheelCollider _fL;
+    [SerializeField] private WheelCollider _fR;
+    [SerializeField] private WheelCollider _rL;
+    [SerializeField] private WheelCollider _rR;
 
-    [Header("Roues (visuel, optionnel)")]
-    public Transform frontLeftMesh;
-    public Transform frontRightMesh;
-    public Transform rearLeftMesh;
-    public Transform rearRightMesh;
+    [Header("Wheel Meshs")]
+    [SerializeField] private Transform _fLMesh;
+    [SerializeField] private Transform _fRMesh;
+    [SerializeField] private Transform _rLMesh;
+    [SerializeField] private Transform _rRMesh;
 
-    [Header("Conduite")]
-    public float motorTorque = 800f;
-    public float brakeTorque = 3000f;
-    public float maxWheelAngle = 30f;
-    public float maxSpeed = 35f;          // m/s (35 = 126 km/h)
-    public float fullLockAngle = 45f;
-    public Vector3 centerOfMass = new Vector3(0f, -0.5f, 0f);
+    [Header("Driving")]
+    [SerializeField] private float _motorTorque = 800f;
+    [SerializeField] private float _brakeTorque = 3000f;
+    [SerializeField] private float _maxWheelAngle = 30f;
+    [SerializeField] private float _maxSpeed = 200f;
+    [SerializeField] private float _fullLockAngle = 45f;
+    [SerializeField] private Vector3 _centerOfMass = new Vector3(0f, -0.5f, 0f);
 
-    [Header("Anti-blocage")]
-    public float stuckSpeed = 1f;
-    public float stuckTime = 1.5f;
-    public float reverseTime = 1.2f;
+    [Header("Anti-Lock")]
+    [SerializeField] private float _stuckSpeed = 1f;
+    [SerializeField] private float _stuckTime = 1.5f;
+    [SerializeField] private float _reverseTime = 1.2f;
 
-    NavMeshAgent agent;
-    Rigidbody rb;
-    float repathTimer, stuckTimer, reverseTimer;
-    bool directLine;
-    Vector3 steeringTarget;
+    [SerializeField] private NavMeshAgent _agent;
+    [SerializeField] private Rigidbody _rb;
+    private float _repathTimer;
+    private float _stuckTimer;
+    private float _reverseTimer;
+    private bool _directLine;
+    private Vector3 _steeringTarget;
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.centerOfMass = centerOfMass;
+        _rb.centerOfMass = _centerOfMass;
 
-        agent = GetComponent<NavMeshAgent>();
-        agent.updatePosition = false;
-        agent.updateRotation = false;
-        agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
-        agent.autoBraking = false;
+        _agent.updatePosition = false;
+        _agent.updateRotation = false;
+        _agent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
+        _agent.autoBraking = false;
     }
 
     void Start()
     {
-        steeringTarget = transform.position;
-        agent.Warp(transform.position);
+        _steeringTarget = transform.position;
+        _agent.Warp(transform.position);
     }
 
     void Update()
     {
         UpdatePath();
-        SyncWheel(frontLeft, frontLeftMesh);
-        SyncWheel(frontRight, frontRightMesh);
-        SyncWheel(rearLeft, rearLeftMesh);
-        SyncWheel(rearRight, rearRightMesh);
+        SyncWheel(_fL, _fLMesh);
+        SyncWheel(_fR, _fRMesh);
+        SyncWheel(_rL, _rLMesh);
+        SyncWheel(_rR, _rRMesh);
     }
 
     // ---------- Chemin (NavMesh) ----------
     void UpdatePath()
     {
-        if (player == null) return;
+        if (_player == null) return;
 
-        if (!agent.isOnNavMesh)
+        if (!_agent.isOnNavMesh)
         {
-            steeringTarget = player.position;
+            _steeringTarget = _player.position;
             return;
         }
 
-        agent.nextPosition = transform.position;
+        _agent.nextPosition = transform.position;
 
-        repathTimer -= Time.deltaTime;
-        if (repathTimer <= 0f)
+        _repathTimer -= Time.deltaTime;
+        if (_repathTimer <= 0f)
         {
-            repathTimer = repathInterval;
+            _repathTimer = _repathInterval;
 
-            if (NavMesh.SamplePosition(player.position, out var playerHit, 15f, NavMesh.AllAreas))
+            if (NavMesh.SamplePosition(_player.position, out var _playerHit, 15f, NavMesh.AllAreas))
             {
-                agent.SetDestination(playerHit.position);
+                _agent.SetDestination(_playerHit.position);
 
-                directLine = NavMesh.SamplePosition(transform.position, out var carHit, 5f, NavMesh.AllAreas)
-                             && !NavMesh.Raycast(carHit.position, playerHit.position, out _, NavMesh.AllAreas);
+                _directLine = NavMesh.SamplePosition(transform.position, out var carHit, 5f, NavMesh.AllAreas)
+                             && !NavMesh.Raycast(carHit.position, _playerHit.position, out _, NavMesh.AllAreas);
             }
         }
 
-        bool close = (player.position - transform.position).sqrMagnitude
-                     < directChaseDistance * directChaseDistance;
+        bool close = (_player.position - transform.position).sqrMagnitude
+                     < _directChaseDistance * _directChaseDistance;
 
-        steeringTarget = (directLine && close) ? player.position : agent.steeringTarget;
+        _steeringTarget = (_directLine && close) ? _player.position : _agent.steeringTarget;
     }
 
     // ---------- Conduite ----------
     void FixedUpdate()
     {
-        if (player == null) return;
+        if (_player == null) return;
 
-        Vector3 local = transform.InverseTransformDirection(steeringTarget - transform.position);
+        Vector3 local = transform.InverseTransformDirection(_steeringTarget - transform.position);
         local.y = 0f;
 
         float angle = Mathf.Atan2(local.x, local.z) * Mathf.Rad2Deg;
-        float speed = Vector3.Dot(rb.linearVelocity, transform.forward);
-        float distToPlayer = Vector3.Distance(transform.position, player.position);
+        float speed = Vector3.Dot(_rb.linearVelocity, transform.forward);
+        float distTo_player = Vector3.Distance(transform.position, _player.position);
 
-        float steer = Mathf.Clamp(angle / fullLockAngle, -1f, 1f);
+        float steer = Mathf.Clamp(angle / _fullLockAngle, -1f, 1f);
         float throttle;
         float brake = 0f;
 
-        if (reverseTimer > 0f)
+        if (_reverseTimer > 0f)
         {
-            reverseTimer -= Time.fixedDeltaTime;
+            _reverseTimer -= Time.fixedDeltaTime;
             throttle = -0.7f;
             steer = -steer;
         }
         else
         {
             float turn = Mathf.Clamp01(Mathf.Abs(angle) / 90f);
-            float targetSpeed = maxSpeed * Mathf.Lerp(1f, 0.3f, turn);
+            float targetSpeed = _maxSpeed * Mathf.Lerp(1f, 0.3f, turn);
 
             if (speed > targetSpeed) { throttle = 0f; brake = 0.3f; }
             else throttle = 1f;
 
-            if (distToPlayer < stopDistance) { throttle = 0f; brake = 1f; }
+            if (distTo_player < _stopDistance) { throttle = 0f; brake = 1f; }
 
-            if (Mathf.Abs(speed) < stuckSpeed && distToPlayer > stopDistance + 2f)
+            if (Mathf.Abs(speed) < _stuckSpeed && distTo_player > _stopDistance + 2f)
             {
-                stuckTimer += Time.fixedDeltaTime;
-                if (stuckTimer > stuckTime)
+                _stuckTimer += Time.fixedDeltaTime;
+                if (_stuckTimer > _stuckTime)
                 {
-                    reverseTimer = reverseTime;
-                    stuckTimer = 0f;
+                    _reverseTimer = _reverseTime;
+                    _stuckTimer = 0f;
                 }
             }
-            else stuckTimer = 0f;
+            else _stuckTimer = 0f;
         }
 
-        frontLeft.steerAngle = steer * maxWheelAngle;
-        frontRight.steerAngle = steer * maxWheelAngle;
+        _fL.steerAngle = steer * _maxWheelAngle;
+        _fR.steerAngle = steer * _maxWheelAngle;
 
-        SetWheel(frontLeft, throttle, brake);
-        SetWheel(frontRight, throttle, brake);
-        SetWheel(rearLeft, throttle, brake);
-        SetWheel(rearRight, throttle, brake);
+        SetWheel(_fL, throttle, brake);
+        SetWheel(_fR, throttle, brake);
+        SetWheel(_rL, throttle, brake);
+        SetWheel(_rL, throttle, brake);
     }
 
     void SetWheel(WheelCollider w, float throttle, float brake)
     {
-        w.motorTorque = throttle * motorTorque;
-        w.brakeTorque = brake * brakeTorque;
+        w.motorTorque = throttle * _motorTorque;
+        w.brakeTorque = brake * _brakeTorque;
     }
 
     void SyncWheel(WheelCollider col, Transform mesh)
@@ -171,7 +169,7 @@ public class Ziak : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(transform.position, steeringTarget);
-        Gizmos.DrawSphere(steeringTarget, 0.5f);
+        Gizmos.DrawLine(transform.position, _steeringTarget);
+        Gizmos.DrawSphere(_steeringTarget, 0.5f);
     }
 }

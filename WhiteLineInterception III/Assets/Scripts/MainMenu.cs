@@ -7,8 +7,7 @@ public class MainMenu : MonoBehaviour
 {
 
     [SerializeField] private String _gameLevel;
-    [SerializeField] private Animation _cameraAnimation;
-    [SerializeField] private Animation[] _exitAnimation;
+    [SerializeField] private GameObject _fadeOut;
     [SerializeField] private String _settingsLevel;
 
 
@@ -24,12 +23,7 @@ public class MainMenu : MonoBehaviour
 
     public void OpenGameLevel()
     {
-        foreach (Animation animation in _exitAnimation)
-        {
-            animation.Play();
-            Debug.Log(animation.name);
-        }
-        _cameraAnimation.Play();
+        _fadeOut.SetActive(true);
     }
 
     public void OpenSettingsLevel()
