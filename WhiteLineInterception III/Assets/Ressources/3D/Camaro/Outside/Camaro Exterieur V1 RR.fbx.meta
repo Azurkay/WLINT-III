@@ -3,7 +3,22 @@ guid: b9c921eab3c2ef444848b830668f7d63
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blackshroome.001
+    second: {fileID: 2100000, guid: 1bd1b5a1501682549b21b1d31e15716b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: taire.001
+    second: {fileID: 2100000, guid: 64a8828eb7814a942a09e2e81420bf61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wheelshroome.001
+    second: {fileID: 2100000, guid: 58314e79618afa848b9ee457dd0bef61, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

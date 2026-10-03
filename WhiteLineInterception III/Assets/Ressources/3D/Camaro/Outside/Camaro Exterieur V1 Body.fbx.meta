@@ -3,7 +3,67 @@ guid: 354005e5811a9ec488d324da2506ae43
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: backlights1.001
+    second: {fileID: 2100000, guid: b76bd908426cc3f4880d915eb1aee303, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: backlights2
+    second: {fileID: 2100000, guid: 7b44dc64f5878df47ab1e3f3ce01e3c6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body
+    second: {fileID: 2100000, guid: 1cef01545e1554a49a1e9cd114b815e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body2
+    second: {fileID: 2100000, guid: 8f33d35898fc74c41bf7b42ae74b5522, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: down.001
+    second: {fileID: 2100000, guid: 99404d57fc769204eab6d295dc93f2db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: frontlights
+    second: {fileID: 2100000, guid: 6dd5aa2996b5c6348af6166b2ff7af3f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass
+    second: {fileID: 2100000, guid: 0324e48343dcf884c9f7d284614db3a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hood1
+    second: {fileID: 2100000, guid: 923eb487f3294914f83709989da62339, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hood3
+    second: {fileID: 2100000, guid: 6c97cc0c4ba74d24ebc6dc8c5fa444eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: locked
+    second: {fileID: 2100000, guid: 1a5340d967a2bfb4f9566c84cb70ab74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shroome
+    second: {fileID: 2100000, guid: 1a2c9f2758f8f5140bfd34da94138e8f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sidelights.001
+    second: {fileID: 2100000, guid: d1a14114841d1f54cac32203d94c20a7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -36,7 +96,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    useSRGBMaterialColor: 1
+    useSRGBMaterialColor: 0
     sortHierarchyByName: 1
     importPhysicalCameras: 1
     importVisibility: 1

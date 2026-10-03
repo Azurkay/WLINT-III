@@ -470592,7 +470592,8 @@ PrefabInstance:
       value: CamaroExterieurArriere
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8837980990736410611, guid: cccdfab3114841840a4541d2b23b94ed, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cccdfab3114841840a4541d2b23b94ed, type: 3}
