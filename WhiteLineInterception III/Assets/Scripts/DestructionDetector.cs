@@ -4,11 +4,11 @@ using UnityEngine;
 public class DestructionDetector : MonoBehaviour
 {
     [SerializeField] private float _brakeForce = 10000;
+    [SerializeField] private CamaroDrive _camaroRef;
 
     private void OnTriggerEnter(Collider other)
     {
-        Rigidbody rb = other.gameObject.AddComponent<Rigidbody>();
-        rb.mass = 1f;
-        Debug.Log(rb.mass);
+        Destroy(other.gameObject);
+        _camaroRef.SlowDownCar(7000);
     }
 }

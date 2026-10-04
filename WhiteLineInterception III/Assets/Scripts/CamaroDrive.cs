@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -233,6 +234,14 @@ public class CamaroDrive : MonoBehaviour
         _gearsRatios = _gearsRatiosAfterUnlock;
     }
 
+    private void ResetCarPosition()
+    {
+        if (Input.GetAxis("Reset") > 0.1f)
+        {
+            transform.rotation = quaternion.identity;
+        }
+    }
+
     #region Mono
 
     private void Start()
@@ -251,6 +260,7 @@ public class CamaroDrive : MonoBehaviour
         SteeringWheels();
         UpdateWheel();
         MotorSound();
+        ResetCarPosition();
     }
 
     #endregion
