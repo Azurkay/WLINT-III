@@ -7,10 +7,8 @@ public class NuclearCollider : MonoBehaviour
     [SerializeField] private Canvas _gameUI;
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == _camaro)
-        {
-            _deathMenu.gameObject.SetActive(true);
-            _gameUI.gameObject.SetActive(false);
-        }
+        Debug.Log("zdoeoziejf");
+        _deathMenu.gameObject.SetActive(true);
+        _gameUI.gameObject.SetActive(false);
     }
 }

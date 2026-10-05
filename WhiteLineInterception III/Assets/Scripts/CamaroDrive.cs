@@ -6,15 +6,15 @@ public class CamaroDrive : MonoBehaviour
 {
     #region Serialized Attributes
 
-    [SerializeField] private WheelCollider _FL;
-    [SerializeField] private WheelCollider _FR;
-    [SerializeField] private WheelCollider _RL;
-    [SerializeField] private WheelCollider _RR;
+    [SerializeField] private WheelCollider _fL;
+    [SerializeField] private WheelCollider _fR;
+    [SerializeField] private WheelCollider _rL;
+    [SerializeField] private WheelCollider _rR;
 
-    [SerializeField] private Transform _FLTransform;
-    [SerializeField] private Transform _FRTransform;
-    [SerializeField] private Transform _RLTransform;
-    [SerializeField] private Transform _RRTransform;
+    [SerializeField] private Transform _fLTransform;
+    [SerializeField] private Transform _fRTransform;
+    [SerializeField] private Transform _rLTransform;
+    [SerializeField] private Transform _rRTransform;
 
     [SerializeField] private float _motorForce = 100f;
     [SerializeField] private float _steeringForce = 30f;
@@ -103,13 +103,13 @@ public class CamaroDrive : MonoBehaviour
             brake = _brakeForce * -_verticalInput;
         }
 
-        _RL.motorTorque = motor;
-        _RR.motorTorque = motor;
+        _rL.motorTorque = motor;
+        _rR.motorTorque = motor;
 
-        _FL.brakeTorque = brake;
-        _FR.brakeTorque = brake;
-        _RL.brakeTorque = brake;
-        _RR.brakeTorque = brake;
+        _fL.brakeTorque = brake;
+        _fR.brakeTorque = brake;
+        _fL.brakeTorque = brake;
+        _fR.brakeTorque = brake;
 
         _timeBeforeUpdateSpeedMeter = _timeBeforeUpdateSpeedMeter - Time.deltaTime;
 
@@ -128,16 +128,16 @@ public class CamaroDrive : MonoBehaviour
 
     public void SlowDownCar(float brakeForce)
     {
-        _FL.brakeTorque = brakeForce;
-        _FR.brakeTorque = brakeForce;
-        _RL.brakeTorque = brakeForce;
-        _RR.brakeTorque = brakeForce;
+        _fL.brakeTorque = brakeForce;
+        _fR.brakeTorque = brakeForce;
+        _rL.brakeTorque = brakeForce;
+        _rR.brakeTorque = brakeForce;
     }
 
     private void SteeringWheels()
     {
-        _FR.steerAngle = _steeringForce * _horizontalInput;
-        _FL.steerAngle = _steeringForce * _horizontalInput;
+        _fR.steerAngle = _steeringForce * _horizontalInput;
+        _fL.steerAngle = _steeringForce * _horizontalInput;
     }
 
     private void ChangeGear()
@@ -216,10 +216,10 @@ public class CamaroDrive : MonoBehaviour
 
     private void UpdateWheel()
     {
-        RotateWheel(_FL, _FLTransform);
-        RotateWheel(_FR, _FRTransform);
-        RotateWheel(_RL, _RLTransform);
-        RotateWheel(_RR, _RRTransform);
+        RotateWheel(_fL, _fLTransform);
+        RotateWheel(_fR, _fRTransform);
+        RotateWheel(_rL, _rLTransform);
+        RotateWheel(_rR, _rRTransform);
     }
     
     private void GetInput()
@@ -238,7 +238,8 @@ public class CamaroDrive : MonoBehaviour
     {
         if (Input.GetAxis("Reset") > 0.1f)
         {
-            transform.rotation = quaternion.identity;
+            float rotationY = transform.eulerAngles.y + 45f;
+            transform.rotation = Quaternion.Euler(0f, rotationY, 0f);
         }
     }
 
