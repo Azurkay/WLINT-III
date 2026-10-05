@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/BeginingJoke/BeginJokeScene.unity
+    guid: a45b981917dcec948ab8fa2c4ff0a47c
+  - enabled: 1
     path: Assets/Levels/MainMenu.unity
     guid: abe81c70e5b9728408461dea25a548b9
   - enabled: 1
@@ -14,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/SettingsLevel.unity
     guid: d974881b47d431f40a4b349fca944f5f
+  - enabled: 1
+    path: Assets/Levels/BunkerArrival.unity
+    guid: 0d38e1d95c7fc0d4ca29ff22da8aac4d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 35845fe01580c41289b024647b1d1c53, type: 3}
   m_UseUCBPForAssetBundles: 0

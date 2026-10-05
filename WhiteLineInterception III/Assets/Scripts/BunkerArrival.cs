@@ -1,13 +1,13 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BunkerArrival : MonoBehaviour
 {
+    [SerializeField] private String _endingLevel;
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Bravo fdp");
+        SceneManager.LoadScene(_endingLevel);
     }
-
-
-
 }
