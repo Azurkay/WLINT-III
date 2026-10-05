@@ -5,7 +5,7 @@ public class SetActiveGameObject : MonoBehaviour
     [SerializeField] private GameObject _gameObject;
     [SerializeField] private bool _isActive;
 
-    private void SetIsActiveGameObject()
+    public void SetIsActiveGameObject()
     {
         _gameObject.SetActive(_isActive);
     }
